@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(36, 36, 36);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 500px;
+    height: 500px;
+    gap: 5px;
+    border: 10px solid rgb(99, 81, 234);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(107, 107, 107, 0.5);
+}
+.card div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: rgb(3, 40, 7);
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+.red{
+    background-color: #f01d1d !important;
+}
+.ligthGreen{
+    background-color: #04b407 !important;
+}
+.darkGreen{
+    background-color: #088f3c !important;
+}
+.orange{
+    background-color: #ff6f00 !important;
+}
+.triangle_Top_left_corner{
+    border-radius: 20rem 0 0 0;
+}
+.square{
+}
+.triangle_Top_rigth_corner{
+    border-radius:  0 20rem 0 0;
+}
+.triangle_buttom_left_corner{
+    border-radius:  0 0 0 20rem ;
+}
+.triangle_buttom_rigth_corner{
+    border-radius:  0 0  20rem 0 ;
+}
+.circle{
+    border-radius: 50%;
+    animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width:600px) {
+    .card{
+        width: 350px;
+        height: 350px;
+    }
+    .card div{
+        font-size: 1.5rem;
+    }
+}
