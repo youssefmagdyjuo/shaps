@@ -4,11 +4,69 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(237, 249, 251);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    width: 70%;
+    margin: 2rem auto;
+    position: absolute;
+    top: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Underline hover effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ffeb3b;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 .card{
     /* background-color: red; */
@@ -22,12 +80,13 @@ body{
     border: 10px solid rgb(99, 81, 234);
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(107, 107, 107, 0.5);
+    box-shadow: 0 0 20px rgb(0, 173, 248);
     overflow: hidden;
+    background-color: #fff;
 }
 .card span{
     position: absolute;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(203, 231, 40);
     height: 20px;
     width: 150px;
     bottom: 15%;
@@ -40,26 +99,77 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    color: rgb(3, 40, 7);
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .red{
     background-color: #f01d1d !important;
 }
 .ligthGreen{
-    background-color: #04b407 !important;
+    background-color: #1ed321 !important;
 }
 .darkGreen{
-    background-color: #088f3c !important;
+    background-color: #29b332 !important;
 }
 .orange{
     background-color: #ff6f00 !important;
+}
+.yellow{
+    background-color: #ffea00 !important;
+}
+.blue{
+    background-color: #0040ff !important;
 }
 .triangle_Top_left_corner{
     border-radius: 20rem 0 0 0;
 }
 .square{
+}
+.triangle_buttom{
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-top: 32px solid red;
+    width: 0px;
+    margin: auto;
+    height: 0;
+}
+
+.eye {
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 7px #2323233d inset;
+    overflow: hidden;
+}
+
+.pupil {
+    width: 40%;
+    height: 40%;
+    background: #111;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: move-eye 2s infinite alternate ease-in-out;
+}
+
+.eyelid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e7e7e7;
+    border-radius: 50%;
+    transform-origin: top;
+    animation: blink 3s infinite;
+}
+
+.halfCircle {
+    border-radius: 50%;
+    clip-path: inset(0 0 50% 0);
 }
 .triangle_Top_rigth_corner{
     border-radius:  0 20rem 0 0;
@@ -76,12 +186,12 @@ body{
 }
 
 @keyframes move {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes roadMove {
@@ -92,6 +202,15 @@ body{
         right: 500px; 
     }
 }
+@keyframes move-eye {
+  0%   { transform: translate(-70%, -50%); } /* left */
+  50%  { transform: translate(-50%, -70%); } /* up */
+  100% { transform: translate(-30%, -50%); } /* right */
+}
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(0); }  /* مفتوحة */
+  95%           { transform: scaleY(1); }  /* مقفولة */
+}
 
 @media (max-width:600px) {
     .card{
@@ -99,7 +218,14 @@ body{
         height: 350px;
     }
     .card div{
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
+    .triangle_buttom{
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-top: 22px solid red;
+
+}
 }
 
