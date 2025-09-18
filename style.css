@@ -12,6 +12,7 @@ body{
 }
 .card{
     /* background-color: red; */
+    position: relative;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
@@ -22,8 +23,19 @@ body{
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(107, 107, 107, 0.5);
+    overflow: hidden;
 }
+.card span{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    height: 20px;
+    width: 150px;
+    bottom: 70px;
+    animation: roadMove 1.5s linear infinite;
+}
+
 .card div{
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +43,6 @@ body{
     color: rgb(3, 40, 7);
     font-weight: bold;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
 }
 .red{
     background-color: #f01d1d !important;
@@ -61,7 +72,7 @@ body{
 }
 .circle{
     border-radius: 50%;
-    animation: move 1s linear infinite;
+    animation: move 0.9s linear infinite;
 }
 
 @keyframes move {
@@ -72,6 +83,16 @@ body{
     transform: rotate(360deg);
   }
 }
+
+@keyframes roadMove {
+    0% {
+        right: -90px;
+    }
+    100% {
+        right: 500px; 
+    }
+}
+
 @media (max-width:600px) {
     .card{
         width: 350px;
@@ -81,3 +102,4 @@ body{
         font-size: 1.5rem;
     }
 }
+
