@@ -30,7 +30,7 @@ body{
     background-color: rgb(255, 255, 255);
     height: 20px;
     width: 150px;
-    bottom: 70px;
+    bottom: 15%;
     animation: roadMove 1.5s linear infinite;
 }
 
