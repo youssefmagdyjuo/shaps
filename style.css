@@ -71,6 +71,7 @@ nav a:hover::after {
     box-shadow: 0 0 20px rgb(0, 173, 248);
     overflow: hidden;
     background-color: #fff;
+    
 }
 .card span{
     position: absolute;
@@ -82,6 +83,7 @@ nav a:hover::after {
 }
 
 .card div{
+    /* background-color: rgb(0, 0, 0); */
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -122,12 +124,30 @@ nav a:hover::after {
     margin: auto;
     height: 0;
 }
+.triangle_rigth{
+    border-left: 30px solid transparent;
+    border-right: 30px solid red;
+    border-bottom: 30px solid transparent;
+    border-top: 32px solid transparent;
+    width: 0px;
+    margin: auto;
+    height: 0;
+}
+.triangle_left{
+    border-left: 30px solid red;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-top: 32px solid transparent;
+    width: 0px;
+    margin: auto;
+    height: 0;
+}
 
 .eye {
     background: #fff;
     border-radius: 50%;
     position: relative;
-    box-shadow: 0 0 7px #2323233d inset;
+    box-shadow: 0 0 10px #2323233d inset;
     overflow: hidden;
 }
 
@@ -155,9 +175,38 @@ nav a:hover::after {
     animation: blink 3s infinite;
 }
 
-.halfCircle {
+.halfCircle_H {
     border-radius: 50%;
     clip-path: inset(0 0 50% 0);
+}
+.halfCircle_V {
+    border-radius: 50%;
+    clip-path: inset(0 50% 0 0);
+}
+.inverted {
+    rotate: 180deg;
+}
+.buttom {
+    position: relative;
+    bottom: -50%;
+}
+.top{
+    position: relative;
+    top: -50%;
+}
+.rigth{
+    position: relative;
+    left: 50%;
+}
+.left{
+    position: relative;
+    right: 50%;
+}
+._-45deg{
+    rotate: -60deg;
+}
+._30deg{
+    rotate: -120deg;
 }
 .triangle_Top_rigth_corner{
     border-radius:  0 20rem 0 0;
@@ -171,6 +220,34 @@ nav a:hover::after {
 .circle{
     border-radius: 50%;
     animation: move 0.9s linear infinite;
+}
+.ball{
+    animation: ball_move 0.9s linear infinite;
+}
+.hand{
+    animation: hand_move 0.9s linear infinite;
+}
+@keyframes hand_move {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(20deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+@keyframes ball_move {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes move {
